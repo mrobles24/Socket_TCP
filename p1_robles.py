@@ -90,8 +90,8 @@ class AgentHandler(socketserver.StreamRequestHandler):
         while not self.game.is_help_request_active():  # Wait until a help request is active
             pass
 
-        # 80% chance for each agent to respond to the help request
-        if random.random() <= 0.8:
+        # 30% chance for each agent to respond to the help request
+        if random.random() <= 0.3:
             response = self.game.respond_to_help(self.agent_id)  # Respond to the active request
             if response:
                 self.send(f"Agent {self.agent_id} responded to help request {response}.")
