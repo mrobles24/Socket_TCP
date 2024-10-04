@@ -1,4 +1,4 @@
-# README Practica 1 Socket_TCP
+# Practica 1 Socket_TCP
 
 ## Descripción General
 
