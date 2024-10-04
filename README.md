@@ -18,6 +18,10 @@ Este programa es un servidor TCP multihilo en el que agentes simulan una tarea c
 4. Abrimos más terminales con el comando anterior (Otros Agentes que envian respuestas).
 5. En la primera terminal (la que ha lanzado el programa) tendremos los logs con la simulación del juego.
 
+## Notas
+- Cuando el Agente 1 pide ayuda, como los otros agentes ya están conectados, se ejecutan todas las respuestas a la vez (puesto que los otros agentes han estado esperando a la petición de ayuda), esto puede conducir a que los prints no estén ordenados (debido a concurrencia). Aún así, esto no afecta al resultado del programa.
+- Los agentes se van desconectando a medida que envian respuestas a la ayuda (envian una respuesta y se desconectan), excepto el Agente 1, que se desconecta cuando recibe la ayuda suficiente o cuando se cumple el timeout.
+
 
 
 
