@@ -22,7 +22,7 @@ class AgentHandler(socketserver.StreamRequestHandler):
         except Exception as e:
             print(e)
         finally:
-            print("Closed: client %s on %s" % (self.client_address, threading.current_thread().name))
+            print("Disconnected: client %s on %s" % (self.client_address, threading.current_thread().name))
 
     # Helper function to send messages to the agent
     def send(self, message):
@@ -76,13 +76,13 @@ class AgentHandler(socketserver.StreamRequestHandler):
 
         # If enough responses were received, end the game successfully
         if responses_received == 2:
-            self.send(f"Help request {help_id} satisfied with quorum. Ending program.")
-            print(f"Help request {help_id} satisfied with quorum. Ending program.")
+            self.send(f"Help request {help_id} satisfied. Ending program sucessfully.")
+            print(f"Help request {help_id} satisfied. Ending program successfully.")
             self.game.end_game()  # End the game when the help request is satisfied
         else:
             # If not enough responses, end the game due to timeout or insufficient help
-            self.send(f"Help request {help_id} expired with {responses_received} supports. Ending program.")
-            print(f"Help request {help_id} expired with {responses_received} supports. Ending program.")
+            self.send(f"Help request {help_id} expired with {responses_received} supports. Ending program unsucessfully.")
+            print(f"Help request {help_id} expired with {responses_received} supports. Ending program unsucessfully.")
             self.game.end_game()
 
     # Other agents wait for a help request and decide whether to respond
