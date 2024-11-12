@@ -1,4 +1,4 @@
-# Practica 1 Socket_TCP
+# Socket_TCP
 
 ## Descripción General
 
@@ -15,7 +15,7 @@ Este programa es un servidor TCP multihilo en el que agentes simulan una tarea c
 ## Cómo Ejecutar
 
 1. Se arranca una terminal y se accede al directorio que contiene el programa.
-2. Lanzamos el programa con: python3 p1_robles.py
+2. Lanzamos el programa con: python3 app.py
 3. Abrimos otra terminal y lanzamos el siguiente comando: nc localhost 9999 (Agente 1, que envia el mensaje de ayuda).
 4. Abrimos más terminales con el comando anterior (Otros Agentes que envian respuestas).
 5. En la primera terminal (la que ha lanzado el programa) tendremos los logs con la simulación del juego.
